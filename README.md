@@ -1,6 +1,6 @@
 Commodities Price Predictor
 
-This project is a Machine Learning–based web application that predicts the prices of used cars and new laptops based on their specifications.
+This project is a Machine Learning–based web application that predicts the prices of  used cars and new laptops based on their specifications.
 
 Users can enter product details such as brand, specifications, and other attributes, and the system will generate an estimated price prediction using trained machine learning models.
 
@@ -50,7 +50,26 @@ laptop_model.pkl – Model trained to predict laptop prices.
 
 These models are loaded in the Flask application to generate predictions based on user inputs.
 
-Project Structure Commodities_Price_Predictor │ ├── app.py ├── car_model.pkl ├── laptop_model.pkl │ ├── quikr_car.csv ├── laptop_data.csv ├── Cleaned_Car_data.csv ├── Cleaned_laptop_data.csv │ ├── templates │ └── index.html │ ├── static │ └── style.css
+Project Structure
+Commodities_Price_Predictor
+│
+├── app.py
+├── car_model.pkl
+├── laptop_model.pkl
+│
+├── quikr_car.csv
+├── laptop_data.csv
+├── Cleaned_Car_data.csv
+├── Cleaned_laptop_data.csv
+│
+├── templates
+│     └── index.html
+│     └── car.html
+│     └── laptop.html
+│     └── result.html
+│
+├── static
+│     └── style.css
 
 app.py – Main Flask application that connects the frontend with the machine learning models.
 
@@ -61,7 +80,9 @@ static/ – Contains CSS and other static files used for styling.
 Cleaned datasets – Used for training and reference.
 
 How to Run the Project
-
-Install required libraries pip install pandas numpy scikit-learn flask
-Run the Flask application python app.py
-Open the application in your browser http://127.0.0.1:5000/
+1. Install required libraries
+pip install pandas numpy scikit-learn flask
+2. Run the Flask application
+python app.py
+3. Open the application in your browser
+http://127.0.0.1:5000/
