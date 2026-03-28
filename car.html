@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+<h2>Car Price Prediction</h2>
+
+<form action="/predict_car" method="post">
+    Company:
+    <select name="company" id="company" onchange="loadModels()">
+        {% for c in companies %}
+        <option value="{{c}}">{{c}}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    Car Model:
+    <select name="name" id="models"></select>
+    <br><br>
+
+    Year:
+    <select name="year">
+        {% for y in years %}
+        <option value="{{y}}">{{y}}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    KM Driven:
+    <input type="number" name="kms_driven">
+    <br><br>
+
+    Fuel Type:
+    <select name="fuel_type">
+        {% for f in fuels %}
+        <option value="{{f}}">{{f}}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    <button type="submit">Predict Price</button>
+    <div class="container">
+    <h1>Car Price Prediction</h1>
+    <form method="POST" action="/predict_car">
+        ...
+        <button type="submit" class="btn">Predict Price</button>
+    </form>
+</div>
+
+</form>
+
+<script>
+function loadModels() {
+    var company = document.getElementById("company").value;
+    fetch("/get_models", {
+        method: "POST",
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+        body: "company=" + company
+    })
+    .then(res => res.json())
+    .then(data => {
+        let modelSelect = document.getElementById("models");
+        modelSelect.innerHTML = "";
+        data.forEach(m => {
+            modelSelect.innerHTML += `<option value="${m}">${m}</option>`;
+        });
+    });
+}
+window.onload = loadModels;
+</script>
+
+</body>
+</html>
