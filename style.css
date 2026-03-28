@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    margin-top: 60px;
+    background: rgba(0,0,0,0.4);
+    padding: 40px;
+    border-radius: 12px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+select, input {
+    padding: 10px;
+    margin: 10px;
+    width: 220px;
+    border-radius: 6px;
+    border: none;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #e68900;
+}
+
+.price-box {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #00ffcc;
+}
