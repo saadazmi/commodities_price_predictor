@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Predicted Price</h1>
+        <div class="price-box">
+            ₹ {{ prediction }}
+        </div>
+        <a href="/" class="btn">⬅ Back to Home</a>
+    </div>
+</body>
+</html>
